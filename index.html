@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <title>Rest Contries Api</title>
 </head>
 <body>
     <nav>
@@ -32,13 +32,21 @@
                 <input type="text" placeholder="Search for a country...">
             </div>
             <div class="choose--category">
-                <p>Filter by Region</p>
-                <span class="material-symbols-outlined">
+                <p onclick="showMenu()">Filter by Region</p>
+                <span onclick="showMenu()" class="material-symbols-outlined">
                     expand_more
                 </span>
+                <div class="regions">
+                    <p onclick="searchByRegion('Africa')">Africa</p>
+                    <p onclick="searchByRegion('Americas')">America</p>
+                    <p onclick="searchByRegion('Asia')">Asia</p>
+                    <p onclick="searchByRegion('Europe')">Europe</p>
+                    <p onclick="searchByRegion('Oceania')">Oceania</p>
+                </div>
             </div>
         </div>
-        <div class="country--list"></div>
+        <div id="country--list" class="country--list">
+        </div>
     </main>
     <script src="scripts.js"></script>
 </body>

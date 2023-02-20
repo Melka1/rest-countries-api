@@ -1,0 +1,9 @@
+ <div class="country--container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg" alt="">
+    <div class="country--desc">
+        <p class="country--name">Afghanistan</p>
+        <p class="population">Population: <span>40218234</span></p>
+        <p class="region">Region: <span>Asia</span></p>
+        <p class="capital">Capital: <span>Kabul</span></p>
+    </div>
+</div>

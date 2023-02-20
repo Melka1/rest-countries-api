@@ -16,6 +16,7 @@ body{
     min-height: 100vh;
     color: white;
     font-family: 'Nunito Sans', sans-serif;
+     background: $Very-Dark-Blue-Dark-Mode-Background;
     nav {
         width: auto;
         background: $Dark-Blue-Dark-Mode-Elements;
@@ -35,11 +36,11 @@ body{
     }
     main {
         & * {
-            font-size: 16px;
+            font-size: 14px;
         }
-        height: -webkit-fill-available;
-        background: $Very-Dark-Blue-Dark-Mode-Background;
+        // background: $Very-Dark-Blue-Dark-Mode-Background;
         padding: 30px 50px;
+        // width: fit-content;
         .search--control {
             display: flex;
             justify-content: space-between;
@@ -61,10 +62,85 @@ body{
                     &::placeholder {
                         color: white;
                     }
+                    &:focus {
+                        border: none;
+                        color: white;
+                        outline: none;
+                    }
                 }
             }
             .choose--category {
                 gap: 40px;
+                position: relative;
+                &>p:hover,&>span:hover{
+                    cursor: pointer;
+                }
+                .regions {
+                    display: none;
+                    position: absolute;
+                    left: 0;
+                    top: 50px;
+                    background-color: $Dark-Blue-Dark-Mode-Elements;
+                    width: 100%;
+                    padding: 10px 0px;
+                    border-radius: 10px;
+                    p {
+                        padding: 5px 20px;
+                        margin-bottom: 3px;
+                        &:hover {
+                            cursor: pointer;
+                            border-bottom: 1px solid $Very-Light-Gray-Light-Mode-Background;
+                        }
+                    }
+                }
+            }
+        }
+        .country--list {
+            overflow-x: scroll;
+            // border: 1px solid;
+            margin-top: 40px;
+            display: grid;
+            width: 100%;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            justify-content: space-between;
+            gap:50px;
+            &::-webkit-scrollbar{
+                visibility: hidden;
+            }
+            .country--container{
+                width: 100%;
+                border-radius: 7px;
+                background-color: $Dark-Blue-Dark-Mode-Elements;
+                img {
+                    height: 14vw;
+                    min-height: 140px;
+                    width: 100%;
+                    min-width: 200px;
+                    border-top-right-radius: 5px;
+                    border-top-left-radius: 5px;
+                    //object-fit: cover;
+                }
+                .country--desc {
+                    padding: 20px;
+                    border-bottom-left-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                    .country--name {
+                        font-weight: bold;
+                        margin-bottom: 1rem;
+
+                    }
+                    .population, .region, .capital {
+                        font-size: 0.8rem;
+                        font-weight: bold;
+                        line-height: 1.5rem;
+                        span {
+                            font-size: 0.8rem;
+                            font-weight: normal;
+                            // color: $Dark-Gray-Light-Mode-Input;
+                        }
+                    }
+                }
             }
         }
     }
