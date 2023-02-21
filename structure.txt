@@ -7,3 +7,63 @@
         <p class="capital">Capital: <span>Kabul</span></p>
     </div>
 </div>
+
+<div class="search--control">
+            <div class="search--bar">
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+                <input id="search" type="text" onkeyup="handleSearch()" placeholder="Search for a country...">
+            </div>
+            <div class="choose--category">
+                <p onclick="showMenu()">Filter by Region</p>
+                <span onclick="showMenu()" class="material-symbols-outlined">
+                    expand_more
+                </span>
+                <div class="regions">
+                    <p onclick="searchByRegion('Africa')">Africa</p>
+                    <p onclick="searchByRegion('Americas')">America</p>
+                    <p onclick="searchByRegion('Asia')">Asia</p>
+                    <p onclick="searchByRegion('Europe')">Europe</p>
+                    <p onclick="searchByRegion('Oceania')">Oceania</p>
+                </div>
+            </div>
+        </div>
+
+
+         <div id="country--preview" class="country--preview">
+            <div class="back">
+                <span class="material-symbols-outlined">
+                keyboard_backspace
+                </span>
+                <p>Back</p>
+            </div>
+            <div class="preview--pane">
+                <div class="flag">
+                    <img src="https://flagcdn.com/ad.svg" alt="">
+                </div>
+                <div class="country--info">
+                    <h1 class="name">Belgium</h1>
+                    <div class="desc--pane">
+                        <div class="pane1">
+                            <p class="native--name">Native Name: <span>Belge</span></p>
+                            <p class="population">Population: <span>10213234</span></p>
+                            <p class="region">Region: <span>Europe</span></p>
+                            <p class="sub--region">Sub Region: <span>Western Europe</span></p>
+                            <p class="capital">Capital: <span>Brussels</span></p>
+                        </div>
+                        <div class="pane2">
+                            <p class="domain">Top Level Domain: <span>.be</span></p>
+                            <p class="currency">Currencies: <span>Euro</span></p>
+                            <p class="language">Languages: <span>Dutch, French, German</span></p>
+                        </div>
+                    </div>
+                    <div class="border--countries">
+                        <p class="border--list">Border Countries:</p>
+                        <button>France</button>
+                        <button>German</button>
+                        <button>Netherlands</button>
+                    </div>
+                </div>
+            </div>
+        </div>
