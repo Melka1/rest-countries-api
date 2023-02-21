@@ -101,7 +101,6 @@ body{
         }
         .country--list {
             overflow-x: scroll;
-            // border: 1px solid;
             margin-top: 40px;
             display: grid;
             width: 100%;
@@ -232,8 +231,13 @@ body{
     }
 
 }
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 1;
+    font-size:20px;
+}
+
 .kind {
-    font-variation-settings: 'FILL' 0
+    font-variation-settings: 'FILL' 0 !important
 }
 .dark--nav {
     color: $Dark-Blue-Dark-Mode-Elements !important;
@@ -263,3 +267,59 @@ body{
     color: $Dark-Blue-Dark-Mode-Elements;
 }
 
+@media screen and (width<=500px) {
+    body {
+        nav {
+            .title {
+                font-size: 0.7rem;
+            }
+            padding: 15px 20px;
+            h1 {
+                //font-size: 0.8rem;
+            }
+        }
+        main {
+            padding: 30px 20px;
+            .search--control {
+                flex-direction: column;
+                gap: 40px;
+                align-items: flex-start;
+                .search--bar {
+                    width: 100%;
+                }
+            }
+
+            .country--list {
+                grid-template-columns: repeat(1, 1fr) !important;
+                padding:20px 40px;
+                .country--container {
+                    img {
+                        // min-height: 200px;
+                    }
+                    .country--desc {
+                        padding: 40px 20px;
+                    }
+                }
+            }
+            .country--preview {
+                // gap: 20px;
+                .preview--pane {
+                    grid-template-columns: none;
+                    gap: 0;
+                    .country--info {
+                        padding: 30px 0;
+                        .desc--pane {
+                            grid-template-columns: none;
+                        }
+                        .border--countries{
+                            .border--list {
+                                display: block;
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

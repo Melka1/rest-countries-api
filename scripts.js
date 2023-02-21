@@ -115,7 +115,7 @@ function handleSearch(){
 function handleTheme(){
     darkTheme = !darkTheme
     if(darkTheme){
-        $(".material-symbols-outlined").addClass("kind")
+        $("#theme").addClass("kind")
         $("nav").addClass("dark--nav")
         $("body").addClass("dark--body")
         $(".country--container").addClass("dark--nav")
@@ -127,7 +127,7 @@ function handleTheme(){
         $(".back").addClass("dark--nav")
 
     } else {
-        $(".material-symbols-outlined").removeClass("kind")
+        $("#theme").removeClass("kind")
         $("nav").removeClass("dark--nav")
         $("body").removeClass("dark--body")
         $(".country--container").removeClass("dark--nav")

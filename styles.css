@@ -220,8 +220,13 @@ body main .country--preview .preview--pane .country--info .border--countries but
   cursor: pointer;
 }
 
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1;
+  font-size: 20px;
+}
+
 .kind {
-  font-variation-settings: "FILL" 0;
+  font-variation-settings: "FILL" 0 !important;
 }
 
 .dark--nav {
@@ -255,4 +260,45 @@ body main .country--preview .preview--pane .country--info .border--countries but
 
 .dark--words {
   color: hsl(209deg, 23%, 22%);
+}
+
+@media screen and (width <= 500px) {
+  body nav {
+    padding: 15px 20px;
+  }
+  body nav .title {
+    font-size: 0.7rem;
+  }
+  body main {
+    padding: 30px 20px;
+  }
+  body main .search--control {
+    flex-direction: column;
+    gap: 40px;
+    align-items: flex-start;
+  }
+  body main .search--control .search--bar {
+    width: 100%;
+  }
+  body main .country--list {
+    grid-template-columns: repeat(1, 1fr) !important;
+    padding: 20px 40px;
+  }
+  body main .country--list .country--container .country--desc {
+    padding: 40px 20px;
+  }
+  body main .country--preview .preview--pane {
+    grid-template-columns: none;
+    gap: 0;
+  }
+  body main .country--preview .preview--pane .country--info {
+    padding: 30px 0;
+  }
+  body main .country--preview .preview--pane .country--info .desc--pane {
+    grid-template-columns: none;
+  }
+  body main .country--preview .preview--pane .country--info .border--countries .border--list {
+    display: block;
+    margin-bottom: 10px;
+  }
 }/*# sourceMappingURL=styles.css.map */
