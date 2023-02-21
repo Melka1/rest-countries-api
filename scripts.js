@@ -119,9 +119,13 @@ function handleTheme(){
         $("nav").addClass("dark--nav")
         $("body").addClass("dark--body")
         $(".country--container").addClass("dark--nav")
+        $(".country--info").addClass("dark--words")
         $(".search--bar").addClass("dark--search")
         $(".choose--category").addClass("dark--nav")
         $(".regions").addClass("dark--nav")
+        $(".border--countries button").addClass("dark--nav")
+        $(".back").addClass("dark--nav")
+
     } else {
         $(".material-symbols-outlined").removeClass("kind")
         $("nav").removeClass("dark--nav")
@@ -130,6 +134,9 @@ function handleTheme(){
         $(".search--bar").removeClass("dark--search")
         $(".choose--category").removeClass("dark--nav")
         $(".regions").removeClass("dark--nav")
+        $(".country--info").removeClass("dark--words")
+        $(".border--countries button").removeClass("dark--nav")
+        $(".back").removeClass("dark--nav")
     }
 }
 
@@ -139,7 +146,7 @@ function displayCountryInfo(id){
             console.log(country)    
             countryInfo = `
             <div id="country--preview" class="country--preview">
-            <div onclick="initialize()" class="back">
+            <div onclick="initialize()" class="back ${darkTheme?'dark--nav':''}">
                 <span class="material-symbols-outlined">
                 keyboard_backspace
                 </span>
@@ -149,7 +156,7 @@ function displayCountryInfo(id){
                 <div class="flag">
                     <img src="${country[0].flags.svg}" alt="country--name">
                 </div>
-                <div class="country--info">
+                <div class="country--info ${darkTheme?'dark--words':''}">
                     <h1 class="name">${country[0].name}</h1>
                     <div class="desc--pane">
                         <div class="pane1">
@@ -169,7 +176,7 @@ function displayCountryInfo(id){
                     <div class="border--countries">
                             <p class="border--list">Border Countries:</p>
                             ${country[0].borders.map(border=>{
-                                return `<button onclick="displayCountryInfo('${border}')" >${subSet[border]}</button>`
+                                return `<button class="${darkTheme?'dark--nav':''}" onclick="displayCountryInfo('${border}')" >${subSet[border]}</button>`
                             }).join("")}
                         </div>
                     `:""

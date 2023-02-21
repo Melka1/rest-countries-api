@@ -251,4 +251,8 @@ body main .country--preview .preview--pane .country--info .border--countries but
 }
 .dark--search input:focus {
   color: hsl(209deg, 23%, 22%) !important;
+}
+
+.dark--words {
+  color: hsl(209deg, 23%, 22%);
 }/*# sourceMappingURL=styles.css.map */
