@@ -41,7 +41,7 @@ function initialize(){
                     <img src=${item.flags.png} alt="">
                     <div class="country--desc">
                         <p class="country--name">${item.name}</p>
-                        <p class="population">Population: <span>${item.population}</span></p>
+                        <p class="population">Population: <span>${covertNumber(item.population)}</span></p>
                         <p class="region">Region: <span>${item.region}</span></p>
                         <p class="capital">Capital: <span>${item.capital}</span></p>
                     </div>
@@ -65,7 +65,7 @@ function searchByRegion(e){
                 <img src=${item.flags.png} alt="">
                 <div class="country--desc">
                     <p class="country--name">${item.name}</p>
-                    <p class="population">Population: <span>${item.population}</span></p>
+                    <p class="population">Population: <span>${covertNumber(item.population)}</span></p>
                     <p class="region">Sub-region: <span>${item.subregion}</span></p>
                     <p class="capital">Capital: <span>${item.capital}</span></p>
                     <p class="capital">Demonym: <span>${item.demonym}</span></p>
@@ -99,7 +99,7 @@ function handleSearch(){
                     <img src=${item.flags.png} alt="">
                     <div class="country--desc">
                         <p class="country--name">${item.name}</p>
-                        <p class="population">Population: <span>${item.population}</span></p>
+                        <p class="population">Population: <span>${covertNumber(item.population)}</span></p>
                         <p class="region">Region: <span>${item.region}</span></p>
                         <p class="capital">Capital: <span>${item.capital}</span></p>
                     </div>
@@ -161,7 +161,7 @@ function displayCountryInfo(id){
                     <div class="desc--pane">
                         <div class="pane1">
                             <p class="native--name">Native Name: <span>${country[0].nativeName}</span></p>
-                            <p class="population">Population: <span>${country[0].population}</span></p>
+                            <p class="population">Population: <span>${covertNumber(country[0].population)}</span></p>
                             <p class="region">Region: <span>${country[0].region}</span></p>
                             <p class="sub--region">Sub Region: <span>${country[0].subregion}</span></p>
                             <p class="capital">Capital: <span>${country[0].capital}</span></p>
@@ -188,4 +188,19 @@ function displayCountryInfo(id){
         console.log(countryInfo)
         $("main").children().remove()
         $("main").append(countryInfo)
+}
+
+function covertNumber(num){
+    let count = 0
+    let strArr = [...(num+'')]
+    let correct = ''
+    for(let i=strArr.length-1; i>=0; i--){
+        correct = strArr[i] + correct
+        count ++;
+        if(count === 3&&i!=0){
+            correct = ',' + correct
+            count = 0
+        }
+    }
+    return correct
 }

@@ -274,9 +274,6 @@ body{
                 font-size: 0.7rem;
             }
             padding: 15px 20px;
-            h1 {
-                //font-size: 0.8rem;
-            }
         }
         main {
             padding: 30px 20px;
@@ -293,16 +290,12 @@ body{
                 grid-template-columns: repeat(1, 1fr) !important;
                 padding:20px 40px;
                 .country--container {
-                    img {
-                        // min-height: 200px;
-                    }
                     .country--desc {
                         padding: 40px 20px;
                     }
                 }
             }
             .country--preview {
-                // gap: 20px;
                 .preview--pane {
                     grid-template-columns: none;
                     gap: 0;
