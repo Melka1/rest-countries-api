@@ -7,13 +7,13 @@ function initialize(){
     $("main").children().remove()
     $("main").append(`
     <div class="search--control">
-            <div class="search--bar">
+            <div class="search--bar ${darkTheme?'dark--search':''}">
                 <span class="material-symbols-outlined">
                     search
                 </span>
                 <input id="search" type="text" onkeyup="handleSearch()" placeholder="Search for a country...">
             </div>
-            <div class="choose--category">
+            <div class="choose--category ${darkTheme?'dark--nav':''}">
                 <p onclick="showMenu()">Filter by Region</p>
                 <span onclick="showMenu()" class="material-symbols-outlined">
                     expand_more
@@ -37,7 +37,7 @@ function initialize(){
         console.log(data)
         countries = countrySet.map(item => {
             return (
-                `<div onclick="displayCountryInfo('${item.alpha3Code}')" id=${item.numericCode} class="country--container">
+                `<div onclick="displayCountryInfo('${item.alpha3Code}')" id=${item.numericCode} class="country--container ${darkTheme?'dark--nav':''}">
                     <img src=${item.flags.png} alt="">
                     <div class="country--desc">
                         <p class="country--name">${item.name}</p>
