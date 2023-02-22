@@ -18,7 +18,7 @@ function initialize(){
                 <span onclick="showMenu()" class="material-symbols-outlined">
                     expand_more
                 </span>
-                <div class="regions">
+                <div class="regions ${darkTheme?'dark--nav':''}">
                     <p onclick="searchByRegion('Africa')">Africa</p>
                     <p onclick="searchByRegion('Americas')">America</p>
                     <p onclick="searchByRegion('Asia')">Asia</p>
@@ -62,7 +62,7 @@ function searchByRegion(e){
     countries = country.map(item => {
         return (
             `<div onclick="displayCountryInfo('${item.alpha3Code}')" id=${item.numericCode} class="country--container ${darkTheme?'dark--nav':''}">
-                <img src=${item.flags.png} alt="">
+                <img src=${item.flags.png} alt="${item.name+" flag"}">
                 <div class="country--desc">
                     <p class="country--name">${item.name}</p>
                     <p class="population">Population: <span>${covertNumber(item.population)}</span></p>
@@ -96,7 +96,7 @@ function handleSearch(){
         countries = country.map(item => {
             return (
                 `<div onclick="displayCountryInfo('${item.alpha3Code}')" id=${item.numericCode} class="country--container ${darkTheme?'dark--nav':''}">
-                    <img src=${item.flags.png} alt="">
+                    <img src=${item.flags.png} alt="${item.name+" flag"}">
                     <div class="country--desc">
                         <p class="country--name">${item.name}</p>
                         <p class="population">Population: <span>${covertNumber(item.population)}</span></p>
@@ -154,7 +154,7 @@ function displayCountryInfo(id){
             </div>
             <div class="preview--pane">
                 <div class="flag">
-                    <img src="${country[0].flags.svg}" alt="country--name">
+                    <img src="${country[0].flags.svg}" alt="${country[0].name+" flag"}">
                 </div>
                 <div class="country--info ${darkTheme?'dark--words':''}">
                     <h1 class="name">${country[0].name}</h1>
